@@ -7,10 +7,8 @@ import org.testng.annotations.Test;
 import Planes.MilitaryPlane;
 import Planes.PassengerPlane;
 import Planes.Plane;
-
 import java.util.Arrays;
 import java.util.List;
-
 public class AirportTest {
     private static List<Plane> planes = Arrays.asList(
             new PassengerPlane("Boeing-737", 900, 12000, 60500, 164),
@@ -32,7 +30,6 @@ public class AirportTest {
     );
 
     private static PassengerPlane planeWithMaxPassengerCapacity = new PassengerPlane("Boeing-747", 980, 16100, 70500, 242);
-
     @Test
     public void testGetTransportMilitaryPlanes() {
         Airport airport = new Airport(planes);
@@ -49,7 +46,6 @@ public class AirportTest {
 
     @Test
     public void testGetPassengerPlaneWithMaxCapacity() {
-        System.out.println("TEST testGetPassengerPlaneWithMaxCapacity started!");
         Airport airport = new Airport(planes);
         PassengerPlane expectedPlaneWithMaxPassengersCapacity = airport.getPassengerPlaneWithMaxPassengersCapacity();
         Assert.assertTrue(expectedPlaneWithMaxPassengersCapacity.equals(planeWithMaxPassengerCapacity));
@@ -86,9 +82,7 @@ public class AirportTest {
                 Assert.fail("Test failed!");
             }
         }
-        // if not failed
-    }
-
+     }
     @Test
     public void testExperimentalPlanesHasClassificationLevelHigherThanUnclassified(){
         Airport airport = new Airport(planes);
