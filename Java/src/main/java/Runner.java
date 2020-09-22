@@ -1,3 +1,4 @@
+package run;
 import models.MilitaryType;
 import Planes.MilitaryPlane;
 import Planes.PassengerPlane;
@@ -5,7 +6,8 @@ import Planes.Plane;
 import java.util.Arrays;
 import java.util.List;
 public class Runner {
-    static List<Plane> planes = Arrays.asList(
+    public static void main(String[] args) {
+    List<Plane> planes = Arrays.asList(
             new PassengerPlane("Boeing-737", 900, 12000, 60500, 164),
             new PassengerPlane("Boeing-737-800", 940, 12300, 63870, 192),
             new PassengerPlane("Boeing-747", 980, 16100, 70500, 242),
@@ -21,14 +23,9 @@ public class Runner {
             new MilitaryPlane("F-22", 1550, 13000, 11000, MilitaryType.FIGHTER),
             new MilitaryPlane("C-130 Hercules", 650, 5000, 110000, MilitaryType.TRANSPORT)
     );
-    public static void main(String[] args) {
         Airport airport = new Airport(planes);
         Airport militaryAirport = new Airport(airport.getMilitaryPlanes());
         Airport passengerAirport = new Airport(airport.getPasPl());
-                .sortByMaxDistance()
-                .toString());
-                .sortByMaxSpeed()
-                .toString());
-       
+                
     }
 }
